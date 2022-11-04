@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  app:
+    build: ./docker/app
+    ports:
+     - "${KOOL_APP_PORT_80-80}:80"
+     - "${KOOL_APP_PORT_443-443}:443"
+    volumes:
+      - ./:/var/www/html
+      - ./docker/app/apache2/config/sites-available:/etc/apache2/sites-available
+      - ./docker/app/php/config:/usr/local/etc/php
+    networks:
+      - kool_local
+networks:
+  kool_local:

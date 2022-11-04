@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex">
+    <title>Camera Demo</title>
+    <link rel="icon" href="./assets/favicon.ico" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css" integrity="sha512-0SPWAwpC/17yYyZ/4HSllgaK7/gg9OlVozq8K7rf3J8LvCjYEEIfzzpnA2/SSjpGIunCSD18r3UhvDcu/xncWA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="./assets/style.css">
+    <script src='https://unpkg.com/tesseract.js@v2.1.0/dist/tesseract.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js'></script>
+    <script src='./assets/index.js'></script>
+</head>
+<body>
+<div class="main">
+    <div class="loader-area hide">
+        <div class="loader">Loading...</div>
+    </div>
+    <div class="video-viewer hide">
+        <canvas id="canvas-video"></canvas>
+    </div>
+    <div class="ocr hide">
+        <div class="debug" style="display:none"></div>
+        <textarea id="textarea"></textarea>
+{#        <div id="progress"><span>0</span>%</div>#}
+    </div>
+    <div class="btn-area">
+        <button id="play-btn">カメラを起動する</button>
+        <button id="pause-btn" class="hide">撮影する</button>
+        <button id="resume-btn" class="hide">撮り直す</button>
+        <button id="snapshot-btn" class="hide">この写真を使う</button>
+    </div>
+</div>
+</body>
+</html>
