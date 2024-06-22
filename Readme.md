@@ -4,7 +4,7 @@
 
 コンテナを構築
 ```shell
-# kool setup
+# kool run setup
 ```
 
 credentialsディレクトリにGOOGLE_APPLICATION_CREDENTIALSを設置
