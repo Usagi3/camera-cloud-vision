@@ -1,4 +1,4 @@
-FROM php:7.3-apache
+FROM php:8.2-apache
 
 RUN apt-get update \
     && apt-get install -y \
@@ -13,17 +13,19 @@ RUN apt-get update \
         openssl \
         ssl-cert \
         git \
-        nodejs \
-        npm \
+        libonig-dev \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
     && a2enmod ssl \
-    && a2ensite default-ssl \
-    && docker-php-ext-install -j$(nproc) iconv mysqli mbstring xml tokenizer zip bcmath\
-    && pecl install xdebug-2.9.8 \
-    && docker-php-ext-enable xdebug
+    && a2ensite default-ssl
+
+RUN docker-php-ext-install -j$(nproc) iconv xml zip bcmath
 
 RUN cd /etc/apache2/mods-enabled \
     && ln -s ../mods-available/rewrite.load
+
+RUN cd /usr/local/bin \
+    && curl -s http://getcomposer.org/installer | php \
+    && mv composer.phar composer
 
 WORKDIR /var/www/html

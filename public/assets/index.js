@@ -54,9 +54,12 @@
         play: function () {
             navigator.mediaDevices.getUserMedia({
                 video: {
-                    width: 1920,
-                    height: 1040,
+                    // バックカメラ
                     // facingMode: { exact: "environment" }
+                    /* PCで確認する場合 */
+                    // width: 1920,
+                    // height: 1040,
+                    // フロントカメラ
                     facingMode: "user"
                 }
             }).then(function(stream) {

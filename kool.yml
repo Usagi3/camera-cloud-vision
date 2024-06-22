@@ -3,3 +3,9 @@
 #  Use the scripts defined below with:
 #    $ kool run <script>
 # Learn more at: https://kool.dev/docs/getting-started/how-it-works#koolyml
+scripts:
+  composer: kool exec app composer
+  setup:
+    - cp -p env .env
+    - kool start
+    - kool run composer install
