@@ -1,4 +1,4 @@
-# Google Vision API で OCR を実装
+# 撮影した画像をCloud Visionで解析
 
 ## 環境構築
 
